@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+
+import './screens/loginScreen.dart';
+import './screens/onboardingScreen.dart';
 
 class MyApp extends StatefulWidget {
   @override
@@ -11,6 +15,11 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       title: "Cleaning",
       debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        primaryColor: Colors.blue,
+        accentColor: Colors.orangeAccent,
+        fontFamily: GoogleFonts.dmSans().fontFamily,
+      ),
       home: Cleaning(),
     );
   }
@@ -19,6 +28,11 @@ class _MyAppState extends State<MyApp> {
 class Cleaning extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Scaffold(
+      // body: OnboardingScreen(),
+      body: LoginScreen(),
+    );
   }
 }
+
+void main() => runApp(MyApp());
